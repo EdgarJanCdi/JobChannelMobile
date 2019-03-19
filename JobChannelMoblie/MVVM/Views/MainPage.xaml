@@ -6,9 +6,58 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="Auto" Height="Auto">
 
-    <Grid>
+    <Grid x:Name="HeaderGrid" Margin="2,2,2,2">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="ComboGrid" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Background="Teal"  Margin="2,2,2,2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="comboBoxPoste" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" PlaceholderText="Poste" Margin="0,20,-5,20" />
+            <ComboBox x:Name="comboBoxContrat" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" PlaceholderText="Contrat" Margin="0,20,0,20" />
+            <ComboBox x:Name="comboBoxDatePub" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" PlaceholderText="DatePub" Margin="0,20,0,20" />
+            <ComboBox x:Name="comboBoxRegion" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" PlaceholderText="Région" Margin="0,20,0,20" />
+            <ComboBox x:Name="comboBoxDefaultRegion" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" PlaceholderText="DefaultRegion" Margin="0,20,5,20"/>
+        </Grid>
+
+
+        <Grid x:Name="ListGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="White" Margin="2,2,2,2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="TitreGrid" Background="Teal" Grid.Row="0" Margin="0,0,0,4" Padding="0,6,0,6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="txtBlockTitre" Grid.Column="0" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Titre" TextWrapping="Wrap" />
+                <TextBlock x:Name="txtBlockContrat" Grid.Column="1" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Contrat" TextWrapping="Wrap" />
+                <TextBlock x:Name="txtBlockRegion" Grid.Column="2" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Région" TextWrapping="Wrap" />
+            </Grid>
+
+            <ListView x:Name="listViewOffres" Background="Teal" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        </Grid>
 
     </Grid>
 </Page>
